@@ -17,16 +17,21 @@ function JobListCard({
   onFilter,
 }) {
   return (
-    <div className="bg-white w-[74%] mb-6 p-8 border-l-4 border-[#88b4b2] shadow-xl shadow-[#bbd1d2] rounded-[5px]">
-      <div className="flex flex-row align-center justify-between">
-        <div className="flex flex-row gap-6 items-center">
-          <div className="">
-            <img src={logo} alt="" />
+    <div className="bg-white w-[74%] mb-[10%] lg:mb-[1.6%]  p-8 border-l-4 border-[#88b4b2] shadow-xl shadow-[#bbd1d2] rounded-[5px]">
+      <div className="flex flex-col lg:flex-row align-center justify-between">
+        <div className="flex flex-col lg:mb-[0px] mb-6 lg:flex-row gap-6 items-start lg:items-center">
+          <div>
+            <img
+              src={logo}
+              alt=""
+              width={58}
+              className="mt-[-83%] lg:mt-[0px]"
+            />
           </div>
 
           <div className="flex flex-col gap-1">
             <div className="flex flex-flex items-center align-center gap-3 ">
-              <h3 className="text-[#6B9E9A] font-[700] text-[18px]">
+              <h3 className="text-[#6B9E9A] font-[700] text-[18px] ">
                 {company}
               </h3>
               {is_new && (
@@ -45,7 +50,7 @@ function JobListCard({
               {job_title}
             </h1>
 
-            <div className="flex flex-flex items-center align-center gap-[16px] text-[#848A8A]">
+            <div className="flex flex-flex items-center align-center gap-[16px] text-[#848A8A] text-[13px] lg:text-[16px]">
               <p className="font-[500]">{posted_at}</p>
               <h1>•</h1>
               <p className="font-[500]">{contract}</p>
@@ -54,17 +59,17 @@ function JobListCard({
             </div>
           </div>
         </div>
-
-        <div className="flex flex-row gap-4 items-center">
+        <hr className=" pt-5 sm:block" />
+        <div className="flex flex-row gap-4 grid grid-cols-3 lg:flex items-center">
           <a
             onClick={() => onFilter(role)}
-            class="inline-flex hover:bg-[#60A5A5] hover:text-white cursor-pointer items-center rounded-[5px] bg-[#EFF7F4] px-2 py-1 text-[16px] font-[700] text-[#6B9E9A]  "
+            class="inline-flex hover:bg-[#60A5A5] hover:text-white cursor-pointer  items-center rounded-[5px] bg-[#EFF7F4] px-2 py-1 text-[16px] font-[700] text-[#6B9E9A]  "
           >
             {role}
           </a>
           <a
             onClick={() => onFilter(level)}
-            class="inline-flex hover:bg-[#60A5A5] hover:text-white cursor-pointer items-center rounded-[5px] bg-[#EFF7F4] px-2 py-1 text-[16px] font-[700] text-[#6B9E9A]  "
+            class="inline-flex hover:bg-[#60A5A5] hover:text-white  cursor-pointer items-center rounded-[5px] bg-[#EFF7F4] px-2 py-1 text-[16px] font-[700] text-[#6B9E9A]  "
           >
             {level}
           </a>
